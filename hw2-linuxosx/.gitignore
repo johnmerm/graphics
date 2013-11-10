@@ -1,0 +1,8 @@
+*.o
+*.txt
+.project
+.cproject
+transforms
+.settings/
+
+

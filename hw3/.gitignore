@@ -1,0 +1,7 @@
+/hw3-submissionscenes
+/testscenes
+*.o
+*.png
+hw3
+.project
+.cproject
