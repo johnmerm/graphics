@@ -1,8 +1,10 @@
 # version 120
 
+
 /* This is the fragment shader for reading in a scene description, including
-lighting. Uniform lights are specified from the main program, and used in
-the shader. As well as the material parameters of the object. */
+ * lighting. Uniform lights are specified from the main program, and used in
+ * the shader. As well as the material parameters of the object. */
+ 
 
 // Mine is an old machine. For version 130 or higher, do
 // in vec4 color ;
@@ -39,7 +41,13 @@ uniform int istex;
 uniform int makeshine;
 uniform int makedull;
 
-vec4 ComputeLight (const in vec3 direction, const in vec4 lightcolor, const in vec3 normal, const in vec3 halfvec, const in vec4 mydiffuse, const in vec4 myspecular, const in float myshininess) {
+vec4 ComputeLight (	const in vec3 direction,
+					const in vec4 lightcolor,
+					const in vec3 normal,
+					const in vec3 halfvec, 
+					const in vec4 mydiffuse, 
+					const in vec4 myspecular, 
+					const in float myshininess) {
     
         float nDotL = dot(normal, direction) ;
         vec4 lambert = mydiffuse * lightcolor * max (nDotL, 0.0) ;
@@ -52,7 +60,13 @@ vec4 ComputeLight (const in vec3 direction, const in vec4 lightcolor, const in v
         return retval ;
 }
 
-vec4 ComputeLightShine (const in vec3 direction, const in vec4 lightcolor, const in vec3 normal, const in vec3 halfvec, const in vec4 mydiffuse, const in vec4 myspecular, const in float myshininess) {
+vec4 ComputeLightShine (const in vec3 direction, 
+						const in vec4 lightcolor, 
+						const in vec3 normal, 
+						const in vec3 halfvec, 
+						const in vec4 mydiffuse, 
+						const in vec4 myspecular, 
+						const in float myshininess) {
     
         float nDotL = dot(normal, direction) ;
         vec4 lambert = mydiffuse * lightcolor * max (nDotL, 0.0) ;
@@ -65,7 +79,13 @@ vec4 ComputeLightShine (const in vec3 direction, const in vec4 lightcolor, const
         return retval ;
 }
 
-vec4 ComputeLightDull(const in vec3 direction, const in vec4 lightcolor, const in vec3 normal, const in vec3 halfvec, const in vec4 mydiffuse, const in vec4 myspecular, const in float myshininess) {
+vec4 ComputeLightDull(const in vec3 direction, 
+						const in vec4 lightcolor, 
+						const in vec3 normal, 
+						const in vec3 halfvec, 
+						const in vec4 mydiffuse, 
+						const in vec4 myspecular, 
+						const in float myshininess) {
     
         float nDotL = dot(normal, direction) ;
         vec4 lambert = mydiffuse * lightcolor * max (nDotL, 0.0) ;
